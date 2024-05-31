@@ -20,8 +20,14 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
+import { useNavigate } from "react-router-dom";
 
 export function ProfilePage() {
+  const navigate=useNavigate();
+function Navigation(){
+    navigate('/sidebar')
+}
+
   return (<>
   <div className="container mx-auto">
   <div className="bg-blue-300 p-4 h-40 rounded flex-initial md:flex-2 ">
@@ -62,7 +68,7 @@ export function ProfilePage() {
      
       </CardContent>
       <CardFooter className="flex justify-between inline float-right p-1">
-        <Button> LogOut</Button>
+        <Button onClick={Navigation} >  Navigate 2 Sidebar</Button>
       </CardFooter>
     </Card>
     </div>

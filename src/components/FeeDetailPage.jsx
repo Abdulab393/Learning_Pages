@@ -28,17 +28,32 @@ import {
     TableRow,
 } from "@/components/ui/table"
 import { Badge } from "@/components/ui/badge"
+import { useNavigate } from 'react-router-dom';
+
+
+// const navigateVariable=useNavigate();
+// function Navigate(){
+//  navigateVariable('/payment');
+// }
+
 
 function FeeDeatilPage() {
+    const navigate=useNavigate();
+function Navigation(){
+    navigate('/payment')
+}
+
     return (
         <div className="text-center sm:text-left">
             <Tabs defaultValue="account" className="w-auto ">
-                <TabsList className="grid grid-cols-3 px-10 gap-4 mt-10">
+              <div className='flex justify-end'>
+              <TabsList className="grid grid-cols-3 px-10 gap-4 mt-10 md:w-1/2">
                     <TabsTrigger value="account">Basic Details</TabsTrigger>
                     <TabsTrigger value="password">Course Details</TabsTrigger>
                     <TabsTrigger value="details">Fee Details</TabsTrigger>
 
                 </TabsList>
+              </div>
                 <TabsContent value="account">
                     <Card className="xl:col-span-2 text-center sm:text-left">
 
@@ -92,7 +107,7 @@ function FeeDeatilPage() {
                             </div>
                         </CardContent>
                         <CardFooter>
-                            <Button>Save changes</Button>
+                            <Button onClick= {Navigation} >Navigate 2 Payment</Button>
                         </CardFooter>
                     </Card>
                 </TabsContent>
